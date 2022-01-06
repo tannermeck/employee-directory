@@ -14,6 +14,9 @@ export default function App() {
         <Route exact path='/login'>
           <Auth />
         </Route>
+        <Route exact path='/register'>
+          <Auth notRegistered />
+        </Route>
       </Switch>
     </Router>
   )
