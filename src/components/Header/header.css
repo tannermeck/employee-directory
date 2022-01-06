@@ -35,3 +35,12 @@ a {
 .text {
     color:white;
 }
+.logoutButton {
+    width: 100px;
+    height: fit-content;
+    margin-left: 10px;
+}
+.userText {
+    color: red;
+    margin-left: 5px;
+}
