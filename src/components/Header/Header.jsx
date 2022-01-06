@@ -5,7 +5,6 @@ import style from './header.css'
 
 export default function Header(){
     const { user, setUser } = useUser();
-    console.log('USER', user)
 
     const handleLogout = async() => {
         await signOutUser()
