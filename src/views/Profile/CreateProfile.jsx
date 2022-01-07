@@ -5,7 +5,7 @@ import { createProfile, getProfile, updateProfile } from "../../services/profile
 import style from './createprofile.css';
 
 
-export default function CreateProfile({newProfile = false }){
+export default function CreateProfile({existingProfile = false }){
     const { user } = useUser();
     const history = useHistory();
     const email = user.email;
@@ -20,12 +20,19 @@ export default function CreateProfile({newProfile = false }){
             setBio(userProfile.bio)
             setBirthday(userProfile.birthday)
         }
-        if (newProfile) return loadData();
-    }, [newProfile])
+        // const reRoute = async() => {
+        //     if (name !== ''){
+        //         history.replace('/profile')
+        //     }
+        // }
+        if (existingProfile) return loadData();
+        // reRoute()
+    }, [existingProfile])
+
     const handleCreateProfile = async(event) => {
         event.preventDefault();
         try {
-            if (!newProfile){
+            if (!existingProfile){
                 await createProfile({ name, email, bio, birthday });
                 history.push('/profile')
             } else {
@@ -38,7 +45,7 @@ export default function CreateProfile({newProfile = false }){
     }
     return (
         <fieldset className={style.formContainer}>
-            <legend>{newProfile ? 'Edit Profile' : 'Create Profile'}</legend>
+            <legend>{existingProfile ? 'Edit Profile' : 'Create Profile'}</legend>
             <form onSubmit={handleCreateProfile}>
                 <label>Name:</label>
                 <input type='text' placeholder='Name' value={name} onChange={((e) => setName(e.target.value))} required/>
@@ -48,7 +55,7 @@ export default function CreateProfile({newProfile = false }){
                 <input type='date' value={birthday} onChange={((e) => setBirthday(e.target.value))} required/>
                 <label>Bio:</label>
                 <textarea value={bio} onChange={((e) => setBio(e.target.value))} required />
-                <button type='submit'>{newProfile ? 'Save' : 'CreateProfile'}</button>
+                <button type='submit'>{existingProfile ? 'Save' : 'CreateProfile'}</button>
             </form>
         </fieldset>
     )

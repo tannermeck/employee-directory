@@ -33,7 +33,7 @@ export default function App() {
             <CreateProfile />
           </PrivateRoute>
           <PrivateRoute exact path='/edit-profile'>
-            <CreateProfile newProfile />
+            <CreateProfile existingProfile />
           </PrivateRoute>
         </Switch>
       </Router>

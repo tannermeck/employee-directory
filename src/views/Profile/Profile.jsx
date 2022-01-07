@@ -12,14 +12,16 @@ export default function Profile() {
 
     useEffect(() => {
         const loadProfile = async() => {
-            const userProfile = await getProfile();
-            if (!userProfile.name && !userProfile.birthday && !userProfile.bio){
-                history.push('/create-profile')
-            } else {
+            try {
+                const userProfile = await getProfile();
                 setName(userProfile.name);
                 setEmail(userProfile.email);
                 setBirthday(userProfile.birthday);
                 setBio(userProfile.bio);
+            } catch(error){
+                if (error.message === 'JSON object requested, multiple (or no) rows returned'){
+                history.push('/create-profile')
+            }
             }
         }
         loadProfile();
