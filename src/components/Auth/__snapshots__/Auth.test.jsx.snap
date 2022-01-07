@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a login screen 1`] = `
+<div>
+  <h3>
+    Welcome Back!
+  </h3>
+  <fieldset
+    class="authContainer"
+  >
+    <legend>
+      SIGN IN
+    </legend>
+    <form
+      class="formContainer"
+    >
+      <label
+        for="email"
+      >
+        Email:
+      </label>
+      <input
+        class="passwordInput"
+        id="email"
+        type="email"
+        value=""
+      />
+      <label
+        for="password"
+      >
+        Password:
+      </label>
+      <input
+        class="passwordInput"
+        id="password"
+        type="password"
+        value=""
+      />
+      <button
+        type="submit"
+      >
+        SIGN IN
+      </button>
+      <p />
+    </form>
+  </fieldset>
+  <div>
+    <div
+      class="register"
+    >
+      <p>
+        Need an account?
+      </p>
+      <a
+        href="/register"
+      >
+        Sign Up
+      </a>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,46 @@
+.headerContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 85px;
+    border-bottom: 2px solid rgb(255, 208, 0, 1);
+    padding: 10px;
+}
+a {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+}
+.rightContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.login {
+    margin-left: 20px;
+    background-color:rgb(255, 208, 0, 1);
+    color: black;
+    font-weight:100;
+    font-size: 20px;
+    padding: 4px;
+}
+.left, img {
+    height: 75px;
+}
+.left, h1 {
+    color: black;
+    width: fit-content;
+    color:rgb(255, 208, 0, 1);
+}
+.text {
+    color:white;
+}
+.logoutButton {
+    width: 100px;
+    height: fit-content;
+    margin-left: 10px;
+}
+.userText {
+    color: red;
+    margin-left: 5px;
+}
