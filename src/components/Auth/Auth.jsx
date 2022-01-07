@@ -25,7 +25,7 @@ export default function Auth({newUser = false}){
             } else {
                 const currentUser = await signInUser(email, password);
                 await setUser({id: currentUser.id, email: currentUser.email})
-                history.replace('/create-profile')
+                history.replace('/profile')
             }
 
         } catch(error){
