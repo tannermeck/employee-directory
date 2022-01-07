@@ -20,13 +20,7 @@ export default function CreateProfile({existingProfile = false }){
             setBio(userProfile.bio)
             setBirthday(userProfile.birthday)
         }
-        // const reRoute = async() => {
-        //     if (name !== ''){
-        //         history.replace('/profile')
-        //     }
-        // }
         if (existingProfile) return loadData();
-        // reRoute()
     }, [existingProfile])
 
     const handleCreateProfile = async(event) => {
